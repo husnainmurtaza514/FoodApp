@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+  --primary: #ff4757;
+  --secondary: #2f3542;
+  --bg: #f8f9fa;
+  --white: #ffffff;
+  --shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg);
+}
+
+/* --- Login Page --- */
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, var(--primary) 0%, #ffa502 100%);
+}
+
+.login-card {
+  background: var(--white);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  text-align: center;
+  width: 320px;
+}
+
+.login-card h1 { color: var(--primary); margin: 0; font-size: 1.8rem; }
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.form-group input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+.btn-login {
+  padding: 12px;
+  background-color: var(--primary);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* --- Home Page Header (Modified Brand & Spacing) --- */
+.home-container { 
+  padding: 20px 5%; 
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  position: relative; 
+  padding: 40px 0; /* Header padding thodi badha di */
+  width: 100%;
+}
+
+.header-title-section {
+  text-align: center;
+  max-width: 60%;
+}
+
+.header-title-section h1 {
+  color: var(--primary);
+  font-size: 2.2rem; 
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.header-title-section p {
+  color: #666;
+  margin-top: 15px; /* Yahan se space barhayi gayi hai */
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.header-cart-icon {
+  position: absolute;
+  right: 0;
+  background: var(--white);
+  padding: 8px 18px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: var(--secondary);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* --- Food Grid --- */
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 25px;
+  width: 100%;
+}
+
+.food-card {
+  background: var(--white);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: 0.3s ease;
+}
+
+.food-card:hover { transform: translateY(-5px); }
+
+.food-card img { width: 100%; height: 180px; object-fit: cover; }
+
+.card-body { padding: 15px; text-align: center; }
+
+.btn-add {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* --- Floating Bar --- */
+.floating-cart {
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--secondary);
+  color: white;
+  padding: 15px 35px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%;
+  max-width: 550px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.price-tag {
+  background: var(--primary);
+  padding: 3px 15px;
+  border-radius: 15px;
+  margin-left: 12px;
+  font-weight: bold;
+}
+
+/* --- Cart Page --- */
+.cart-container { display: flex; justify-content: center; padding: 40px 20px; }
+.cart-box {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: var(--shadow);
+}
+.cart-item { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee; }
+.total-section { display: flex; justify-content: space-between; font-size: 22px; font-weight: bold; margin-top: 20px; }
+.btn-checkout { width: 100%; padding: 15px; background-color: #2ed573; color: white; border: none; font-weight: bold; border-radius: 10px; margin-top: 20px; cursor: pointer; }
+.btn-back { width: 100%; background: none; border: none; color: #777; margin-top: 10px; text-decoration: underline; cursor: pointer; }
+
+@media (max-width: 768px) {
+  .header { flex-direction: column; gap: 20px; padding: 25px 0; }
+  .header-cart-icon { position: static; }
+  .header-title-section { max-width: 100%; }
+}
